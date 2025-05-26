@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./assets/icons/lasagne-favicon.png" type="image/x-icon">
+    <title>Amore Mio</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./style/icons.css">
+    <link rel="stylesheet" href="./style/shoppingcart.css">
+    <link rel="stylesheet" href="./style/main-content.css">
+
+    <script src="./scripts/file-storage.js"></script>
+    <script src="./script.js"></script>
+    <script src="./scripts/template.js" ></script>
+
+</head>
+<body onload="render()">
+
+    <header>
+
+            <div class="headline">
+                <h1>Amore Mio</h1>
+                <img class="lasagna-icon" src="./assets/icons/lasagne.png" alt="Lasagne.png">
+            </div>
+            <button onclick="toggleShoppingcart()">
+                <img class="shoppingcart-icon-button" src="./assets/icons/einkaufswagen.png" alt="einkaufswagen.png">
+            </button>
+
+    </header>
+
+        <section class="pricelist-section">
+            <div id="pricelist_id">
+        
+            </div>
+        </section>
+
+                        <section id="shoppingcart_id" class="shopingcart-window close-shoppingcart">
+                            <div class="shopingcart-header">
+                                <h2>Warenkorb<img class="shoppingcart-icon-side-window " src="./assets/icons/einkaufswagen.png" alt="shoppingcart.png"></h2>
+                                <button class="shoppingcart-button" onclick="toggleShoppingcart()"><img class="shoppingcart-arrow" src="./assets/icons/shoppingcart-arrow.png" alt="arrow.png"></button>
+                            </div>
+                        </section>
+    
+
+    
+    
+</body>
+</html>

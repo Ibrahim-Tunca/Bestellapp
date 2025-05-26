@@ -1,0 +1,48 @@
+@font-face {
+    font-family: 'PT-Sans';
+    src: url(./assets/fonts/PTSans-Regular.ttf);
+}
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    color: white;
+    font-family: 'PT-Sans';
+    background-color:rgb(249 255 155);
+    overflow-x: hidden;
+}
+
+button{
+    border-radius: 4px;
+    background-color: rgb(190, 219, 138);
+    border-color: rgb(191, 221, 138);
+    padding: 4px 8px;
+}
+
+
+header{
+    background-color:rgb(158, 184, 113);
+    height: 86px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 11px;
+    padding-right: 11px;
+}
+
+h3{
+    font-size: 17px;
+}
+
+p{
+    font-size: 10px;
+}
+
+.headline{
+    display: flex;
+    flex-direction: row;
+}
+

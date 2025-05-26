@@ -1,0 +1,26 @@
+.main-content{
+    color: rgb(180, 85, 85);
+    background-color: moccasin;
+    padding: 9px 71px;
+    padding-right: 236px;
+}
+
+.pricelist-section{
+    padding: 38px 19px;
+}
+
+
+.price-seperator{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.topic-from-menue{
+    color: rgb(180, 85, 85);
+    background-color: moccasin;
+    padding: 48px;
+    padding-top: 31px;
+    padding-bottom: 10px;
+}
+
