@@ -9,7 +9,7 @@
 
     
 
-    width: 356px;
+    width: 256px;
     height: 100vh;
 
     top: 0px;
@@ -36,4 +36,10 @@
     background-color: rgb(180, 85, 85);
     padding: 15px;
     padding-bottom: 5px;
+}
+
+.shopingcart-content{
+    border: 1px solid #ccc; 
+    padding: 10px; 
+    margin-bottom: 10px;
 }
