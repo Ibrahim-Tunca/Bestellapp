@@ -9,7 +9,7 @@ function render() {
         contentRef.innerHTML += `<div class="topic-from-menue"><h2>${categoryName.charAt(0).toUpperCase() + categoryName.slice(1)}</h2></div>`; 
 
 
-        //Bei jedem durchlauf wird der Inhalt von dem Array mit dem Schlüsselwort "categoryName" die neue Variable "dishesInCategory" zugewieser
+        //Bei jedem durchlauf wird der Inhalt von dem Array mit dem Schlüsselwort "categoryName" die neue Variable "dishesInCategory" zugewiesen
         let dishesInCategory = myDishes[categoryName]; 
 
         // Iteriere über die Gerichte innerhalb dieser Kategorie
@@ -29,26 +29,31 @@ function toggleShoppingcart(){
 
 
 function addToBasket(dish) {
-    // 1. Hole den aktuellen Warenkorb aus dem LocalStorage
+    // Hole den aktuellen Warenkorb aus dem LocalStorage
     // localStorage.getItem('basket') gibt einen String zurück (oder null, wenn nichts gespeichert ist).
     // JSON.parse() wandelt diesen String zurück in ein JavaScript-Array.
     // Wenn 'basket' noch nicht existiert, erstellen wir ein leeres Array ([]).
     let basket = JSON.parse(localStorage.getItem('basket')) || [];
 
-    // 2. Füge das neue Gericht zum Warenkorb hinzu
-    basket.push(dish);
-
     
+    
+   // Überprüfen, ob das Gericht bereits im Warenkorb ist
+   // mit === vergleicht man nicht nur beide Werte sondern auch beide Typen ==> Mache die If abfrage nur wenn String und Type gleich ist.
+    let foundDish = basket.find(item => item.name === dish.name);
 
-    // 3. Speichere den aktualisierten Warenkorb zurück im LocalStorage
-    // localStorage.setItem() erwartet einen String.
-    // JSON.stringify() wandelt das JavaScript-Array in einen JSON-String um.
+    if (foundDish) {
+        foundDish.amount++;
+    } else {
+        // Wenn das Gericht nicht gefunden wurde, füge es neu hinzu
+        // Setze die Menge des neu hinzugefügten Gerichts immer auf 1
+        let newDish = { ...dish, amount: 1 }; 
+        basket.push(newDish);
+    }
+
+
+
     localStorage.setItem('basket', JSON.stringify(basket));
 
-
-
-    console.log('Gericht zum Warenkorb hinzugefügt:', dish.name);
-    console.log('Aktueller Warenkorb im LocalStorage:', JSON.parse(localStorage.getItem('basket')));
 
 
     
@@ -86,13 +91,76 @@ document.addEventListener('DOMContentLoaded', render);
 
             // Iteriere über jedes Gericht im Warenkorb und erstelle HTML dafür
             basketRef.forEach(dish => {
-                contentRef.innerHTML += `
-                    <div class="shopingcart-content">
-                        <div>
-                            <h3>${dish.name}</h3>
-                            <a>Preis: ${dish.price.toFixed(2)} ,-</a>
-                        </div>
-                    </div>
-                `;
+                contentRef.innerHTML += createOderHtml(dish);
             });
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+        function clearBasket() {
+            localStorage.removeItem('basket'); // Entfernt den 'basket' Eintrag komplett
+            renderBasket();
+        }
+
+        
+
+
+
+
+
+
+ function increaseAmount(dishName) {
+    let basket = JSON.parse(localStorage.getItem('basket')) || [];
+    let foundDish = basket.find(item => item.name === dishName);
+
+    if (foundDish) {
+        foundDish.amount++;
+        localStorage.setItem('basket', JSON.stringify(basket));
+        renderBasket(); // Warenkorb neu rendern
+    }
+}
+
+function decreaseAmount(dishName) {
+    let basket = JSON.parse(localStorage.getItem('basket')) || [];
+    let foundDish = basket.find(item => item.name === dishName);
+
+    if (foundDish) {
+        foundDish.amount--;
+        // Wenn die Menge 0 erreicht, das Gericht aus dem Warenkorb entfernen
+        if (foundDish.amount <= 0) {
+            basket = basket.filter(item => item.name !== dishName);
+        }
+        localStorage.setItem('basket', JSON.stringify(basket));
+        renderBasket(); // Warenkorb neu rendern
+    }
+}
+
+
+
+
+function cancelOrder(dishName) {
+    let basket = JSON.parse(localStorage.getItem('basket')) || [];
+
+    // Filtere alle Elemente heraus, die NICHT den übergebenen dishName haben.
+    // Das Ergebnis ist ein neues Array ohne das zu entfernende Gericht.
+    basket = basket.filter(item => item.name !== dishName);
+
+    localStorage.setItem('basket', JSON.stringify(basket)); // Speichere den neuen Warenkorb
+    renderBasket(); // Aktualisiere die Anzeige des Warenkorbs
+}

@@ -18,3 +18,32 @@ function createDishHtml(dish) {
             <p>${dish.desctiption}</p>
         </div>`;
 }
+
+function createOderHtml(dish){
+   return  `
+                    <div class="shopingcart-content">
+                        <div>
+                            <div class="display-flex-space-between">
+                                <h3>${dish.name}</h3>
+                                <button class="take-out-basket-button" onclick="cancelOrder('${dish.name}')">
+                                X
+                                </button>
+                            </div>
+                            <div class="order-section"> 
+                                <div class="font-size-shoppingcart">
+                                    <button class="add-remove-button" onclick="decreaseAmount('${dish.name}')">
+                                    -
+                                    </button>
+                                    ${dish.amount}
+                                    x
+                                    <button class="add-remove-button" onclick="increaseAmount('${dish.name}')">
+                                    +
+                                    </button>
+                                </div>
+                                <a class="font-size-shoppingcart">${dish.price.toFixed(2)},-</a>
+                            </div>
+                        </div>
+                    </div>
+                `;
+
+}
