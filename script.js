@@ -73,10 +73,6 @@ document.addEventListener('DOMContentLoaded', render);
 
 
 
-
-
-
-
        
         function renderBasket() {
             let contentRef = document.getElementById("shoppingcart_content_id");
@@ -86,6 +82,7 @@ document.addEventListener('DOMContentLoaded', render);
 
             if (basketRef.length === 0) {
                 contentRef.innerHTML = '<p>Der Warenkorb ist leer.</p>';
+                calculateOrderPrice();
                 return; // Funktion beenden, wenn nichts im Warenkorb ist
             }
 
@@ -93,25 +90,13 @@ document.addEventListener('DOMContentLoaded', render);
             basketRef.forEach(dish => {
                 contentRef.innerHTML += createOderHtml(dish);
             });
+
+            calculateOrderPrice();
         }
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
 
         function clearBasket() {
             localStorage.removeItem('basket'); // Entfernt den 'basket' Eintrag komplett
@@ -164,3 +149,34 @@ function cancelOrder(dishName) {
     localStorage.setItem('basket', JSON.stringify(basket)); // Speichere den neuen Warenkorb
     renderBasket(); // Aktualisiere die Anzeige des Warenkorbs
 }
+
+
+
+
+function calculateOrderPrice(){
+    let basketRef = JSON.parse(localStorage.getItem('basket')) || [];
+    let contentRef = document.getElementById("bill_id");
+    
+    let subTotal = 0;
+    basketRef.forEach(dish => {
+        
+        subTotal += dish.price * dish.amount;
+
+    });
+
+
+
+    const deliveryCost = 3.00;
+    const total = subTotal + deliveryCost;
+
+
+        if(basketRef.length > 0){
+            contentRef.innerHTML = getOrderPrice(subTotal, deliveryCost, total);
+        
+    } else {
+        contentRef.innerHTML = '';
+    }
+
+
+}
+

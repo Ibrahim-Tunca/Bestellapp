@@ -1,10 +1,6 @@
 
 
 function createDishHtml(dish) {
-    // Wichtig: Wir müssen den Button anklickbar machen und die Funktion 'addToBasket' aufrufen.
-    // Dafür nutzen wir ein 'onclick'-Attribut und übergeben das 'dish'-Objekt.
-    // Da 'dish' ein Objekt ist, müssen wir es mit JSON.stringify() in einen String umwandeln,
-    // damit es im 'onclick'-Attribut korrekt als Parameter übergeben werden kann.
     return `
         <div class="main-content">
             <div class="price-seperator">
@@ -46,4 +42,30 @@ function createOderHtml(dish){
                     </div>
                 `;
 
+}
+
+function getOrderPrice(subTotal, deliveryCost, total){
+    return `
+            <div class="bill-summary">
+                <div class="bill-food-deliver">
+                    <a>Zwischensumme; </a>
+                    <a>${subTotal.toFixed(2)},-</a>
+                </div>
+                <div class="bill-food-deliver">
+                    <a>Lieferkosten: </a>
+                    <a>${deliveryCost.toFixed(2)},-</a>
+                </div>
+                <div class="separator">
+                </div>
+                <div class="bill-total">
+                    <a class="total-price">Gesamt: </a>
+                    <a>${total.toFixed(2)},-</a>
+                </div>
+                <div class="pay-button-container">
+                    <button class="pay-button">Jetzt bestellen</button>
+                </div>
+            </div>
+
+            
+        `;
 }

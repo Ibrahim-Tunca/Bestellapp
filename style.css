@@ -46,4 +46,7 @@ p{
     flex-direction: row;
 }
 
-
+.separator{
+    height: 1px;
+    background-color: aliceblue;
+}

@@ -2,6 +2,13 @@
     transform: translateX(100%);
 }
 
+.scroll-behavior{
+    background-color:cadetblue;
+    height: 373px;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
 .shopingcart-window{
     background-color: rgb(217 116 116);
     display: flex;
@@ -39,7 +46,7 @@
 }
 
 .shopingcart-content{
-    border: 1px solid #ccc; 
+    border-bottom: 1px solid #ccc; 
     padding: 10px; 
 }
 
@@ -60,6 +67,7 @@
     height: 17px;
     font-size: 10px;
     width: 17px;
+    border-style: none;
 }
 
 
@@ -89,7 +97,51 @@
 }
 
 .display-flex-space-between{
-    display:flex;
+    display: flex;
     justify-content: space-between;
+    align-items: center;
 }
+
+
+
+
+.bill-summary{
+    font-size: 11px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    position:absolute;
+    bottom: 15px;
+    width: 100%;
+    border-top : 1px solid white;
+}
+
+.bill-food-deliver{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 6px;
+    padding-right: 6px;
+    background-color: cadetblue;
+}
+
+.bill-total{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 6px;
+    padding-right: 6px;
+}
+
+.pay-button{
+    color:white;
+    border-radius: 15px;
+    border-style: none;
+    
+}
+
+.pay-button-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 9px;
+}
+
 
