@@ -48,7 +48,7 @@ function getOrderPrice(subTotal, deliveryCost, total){
     return `
             <div class="bill-summary">
                 <div class="bill-food-deliver">
-                    <a>Zwischensumme; </a>
+                    <a>Zwischensumme: </a>
                     <a>${subTotal.toFixed(2)},-</a>
                 </div>
                 <div class="bill-food-deliver">

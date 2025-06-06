@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="./style/icons.css">
     <link rel="stylesheet" href="./style/shoppingcart.css">
     <link rel="stylesheet" href="./style/main-content.css">
+    <link rel="stylesheet" href="./style/scrollbar.css">
+    <link rel="stylesheet" href="./style/media-querry.css">
 
     <script src="./scripts/file-storage.js"></script>
     <script src="./script.js"></script>
@@ -19,14 +21,14 @@
 <body onload="render()">
 
     <header>
-
-            <div class="headline">
-                <h1>Amore Mio</h1>
-                <img class="lasagna-icon" src="./assets/icons/lasagne.png" alt="Lasagne.png">
-            </div>
-            <button onclick="toggleShoppingcart()">
+            <img class="banner-left" src="./assets/icons/italia-banner.png" alt="banner.png">
+                <h1 class="headline">Amore Mio</h1>
+            <img class="banner-right" src="./assets/icons/italia-banner.png" alt="banner.png">
+            <a onclick="toggleShoppingcart()">
                 <img class="shoppingcart-icon-button" src="./assets/icons/einkaufswagen.png" alt="einkaufswagen.png">
-            </button>
+            </a>
+
+           
 
     </header>
 
@@ -47,11 +49,13 @@
                             <div class="scroll-behavior" id="shoppingcart_content_id">
 
                             </div>
-                            <div class="bill-summary" id="bill_id">
+                            <div id="bill_id">
                                 
                             </div>
                             <button onclick="clearBasket()" class="clear-button">X</button>
                         </section>
+
+        <button class="bottom-button" onclick="toggleShoppingcart()">Bestellen</button>
     
 
     

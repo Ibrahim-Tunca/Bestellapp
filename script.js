@@ -166,8 +166,12 @@ function calculateOrderPrice(){
 
 
 
-    const deliveryCost = 3.00;
+    let deliveryCost = 3.00;
     const total = subTotal + deliveryCost;
+
+    if(total > 15){
+        deliveryCost = 0.00;
+    };
 
 
         if(basketRef.length > 0){
