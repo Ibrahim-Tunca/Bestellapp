@@ -1,0 +1,43 @@
+header{
+    background-color:rgb(158, 184, 113);
+    height: 86px;
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+    background-image: url("./assets/img/geoffroy-hauwen-BPLXQJFlZDM-unsplash.jpg");
+    background-position: 50% 36%;
+    background-size: 1000px 700px;
+
+    
+
+    padding-left: 11px;
+    padding-right: 11px;
+
+    overflow: hidden;
+    position: relative;
+}
+
+.headline{
+    display: flex;
+    padding: 8px;
+}
+
+.banner-left{
+    height:200px;
+    width: 15px;
+    position: absolute;
+    transform:  rotate(0deg);
+    left: 0px;
+}
+
+
+.banner-right{
+    height:200px;
+    width: 15px;
+    position: absolute;
+    transform:  rotate(-0deg);
+
+    right: 0px;
+}

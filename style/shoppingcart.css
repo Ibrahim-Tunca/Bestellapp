@@ -2,6 +2,17 @@
     transform: translateX(100%);
 }
 
+.shopingcart-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: rgb(180, 85, 85);
+    padding: 15px;
+    padding-bottom: 5px;
+}
+
 
 
 .shopingcart-window{
@@ -31,16 +42,7 @@
     border-color: rgb(171 70 70);
 }
 
-.shopingcart-header{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
 
-    background-color: rgb(180, 85, 85);
-    padding: 15px;
-    padding-bottom: 5px;
-}
 
 .shopingcart-content{
     border-bottom: 1px solid white; 

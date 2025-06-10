@@ -23,27 +23,11 @@ button{
     padding: 4px 8px;
 }
 
-
-header{
-    background-color:rgb(158, 184, 113);
-    height: 86px;
-
-    display:flex;
-    justify-content: center;
-    align-items: center;
-
-    background-image: url("./assets/img/geoffroy-hauwen-BPLXQJFlZDM-unsplash.jpg");
-    background-position: 50% 36%;
-    background-size: 1000px 700px;
-
-    
-
-    padding-left: 11px;
-    padding-right: 11px;
-
-    overflow: hidden;
-    position: relative;
+button:hover{
+    filter: brightness(1.2);
+    cursor: pointer;
 }
+
 
 h3{
     font-size: 17px;
@@ -53,32 +37,10 @@ p{
     font-size: 10px;
 }
 
-.headline{
-    display: flex;
-    padding: 8px;
-}
 
 .separator{
     height: 1px;
     background-color: aliceblue;
-}
-
-.banner-left{
-    height:200px;
-    width: 15px;
-    position: absolute;
-    transform:  rotate(0deg);
-    left: 0px;
-}
-
-
-.banner-right{
-    height:200px;
-    width: 15px;
-    position: absolute;
-    transform:  rotate(-0deg);
-
-    right: 0px;
 }
 
 
@@ -90,6 +52,10 @@ p{
     display: none;
     color: white;
     font-size: 15px;
+}
+
+.d_none{
+    display: none;
 }
 
 
