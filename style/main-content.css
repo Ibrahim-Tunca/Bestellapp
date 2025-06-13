@@ -6,7 +6,7 @@
 }
 
 .pricelist-section{
-    padding: 38px 4px;
+    padding: 38px 0px 0px 0px;
 }
 
 
@@ -30,8 +30,9 @@
 }
 
 .plus-button{
-    border-radius: 0px;
-    padding: 0px 3px;
+    padding: 0px 2px;
+    border-style: none;
+    border-radius: 3px;
 }
 
 

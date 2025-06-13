@@ -15,6 +15,7 @@ function createDishHtml(dish) {
         </div>`;
 }
 
+
 function createOderHtml(dish){
    return  `
                     <div class="shopingcart-content">
@@ -44,6 +45,7 @@ function createOderHtml(dish){
 
 }
 
+
 function getOrderPrice(subTotal, deliveryCost, total){
     return `
             <div class="bill-summary">
@@ -62,10 +64,23 @@ function getOrderPrice(subTotal, deliveryCost, total){
                     <a>${total.toFixed(2)},-</a>
                 </div>
                 <div class="pay-button-container">
-                    <button class="pay-button">Jetzt bestellen</button>
+                    <button onclick="confirmOrder()" class="pay-button">Jetzt bestellen</button>
                 </div>
             </div>
 
             
         `;
+}
+
+
+function getPopupWindow(){
+    return `<div onclick="closePopup()" class="background-darkener">
+                                        <div class="popup-window-buy">
+                                            <div class="popup-window-buy-content">
+                                                <p>Bestellung ist unterwegs!</p>
+                                                <div class="popup-window-buy-content-space"></div>
+                                                <button class="popup-window-buy-button" onclick="location.href='https://www.paypal.com/signin?returnUri=https%3A%2F%2Fwww.paypal.com%2Fmyaccount%2Fsummary&state=%3Fintl%3D0'">ok</button>
+                                            </div>
+                                        </div>
+                                    </div>`
 }

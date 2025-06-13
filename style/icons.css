@@ -43,9 +43,18 @@
 }
 
 .plus-icon{
-    height: 11px;
-    width: 11px;
-    margin-top: 3px; 
+    height: 14px;
+    width: 14px;
+    margin-top: 3px;
+}
+
+.social-media-icons{
+    height: 18px;
+    width: 18px;
+}
+
+.social-media-icons:hover{
+    filter: brightness(1.2);
 }
 
 

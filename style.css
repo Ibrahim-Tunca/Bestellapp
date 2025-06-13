@@ -21,6 +21,7 @@ button{
     background-color: rgb(190, 219, 138);
     border-color: rgb(191, 221, 138);
     padding: 4px 8px;
+    color: white;
 }
 
 button:hover{
@@ -57,5 +58,15 @@ p{
 .d_none{
     display: none;
 }
+
+.background-darkener{
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.562);
+    position: fixed;
+    left: 0px;
+    top: 0px;
+}
+
 
 

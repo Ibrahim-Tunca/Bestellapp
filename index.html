@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="./style/main-content.css">
     <link rel="stylesheet" href="./style/scrollbar.css">
     <link rel="stylesheet" href="./style/media-querry.css">
+    <link rel="stylesheet" href="./style/footer.css">
     
 
     <script src="./scripts/file-storage.js"></script>
@@ -20,18 +21,19 @@
     <script src="./scripts/template.js" ></script>
 
 </head>
+
 <body onload="render()">
+
+    <div id="popup-window"></div>
 
     <header>
             <img class="banner-left" src="./assets/icons/italia-banner.png" alt="banner.png">
                 <h1 class="headline">Amore Mio</h1>
+                <img class="lasagna-icon" src="./assets/icons/lasagne.png" alt="llasagna.png">
             <img class="banner-right" src="./assets/icons/italia-banner.png" alt="banner.png">
             <a onclick="toggleShoppingcart()">
                 <img class="shoppingcart-icon-button" src="./assets/icons/einkaufswagen.png" alt="einkaufswagen.png">
             </a>
-
-           
-
     </header>
 
         <section class="pricelist-section">
@@ -54,10 +56,25 @@
                             <div id="bill_id">
                                 
                             </div>
-                            <button onclick="clearBasket()" class="clear-button d_none">X</button>
+                            <button onclick="confirmOrder()" class="d_none">X</button>
                         </section>
 
         <button class="bottom-button" onclick="toggleShoppingcart()">Bestellen</button>
+
+        <footer class="footer-order">
+            <img class="banner-left" src="./assets/icons/italia-banner.png" alt="">
+            <div >
+                <a class="footer-font-style" href="./impressum.html">Impressum</a>
+                <a class="footer-font-style">|</a>
+                <a class="footer-font-style" href="./datenschutz.html">Datenschutzerklärung</a>
+            </div>
+            <div>
+                    <a  href="https://telegram.org/"><img class="social-media-icons"  src="./assets/icons/facebook.png" alt="facebook.png"></a>
+                    <a  href="https://www.facebook.com/"><img class="social-media-icons"  src="./assets/icons/instagram.png" alt="instagramm.png"></a>
+                    <a  href="https://www.instagram.com/"><img class="social-media-icons"  src="./assets/icons/telegramm.png" alt="telegramm.png"></a>
+            </div>
+            <img class="banner-right" src="./assets/icons/italia-banner.png" alt="">
+        </footer>
     
 
     

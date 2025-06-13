@@ -87,12 +87,13 @@
 .take-out-basket-button{
     background-color: rgb(139 46 46);
     border-color: rgb(171 70 70);
-    height: 15px;
+    height: 14px;
     font-size: 7px;
-    padding-bottom: 10px;
-    padding-left: 4px;
-    padding-right: 4px;
+    padding-bottom: 11px;
+    padding-left: 5px;
+    padding-right: 5px;
     padding-top: 3px;
+    border-style: none;
 }
 
 .display-flex-space-between{
@@ -142,4 +143,38 @@
     padding: 9px;
 }
 
+.deliverly-service-description{
+    font-size: 8px;
+}
 
+
+.popup-window-buy{
+    position: absolute;
+    height: 93px;
+    width: 172px;
+    border-radius: 8px;
+
+    background-color: rgb(139 46 46);
+
+    top: 50vh;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.popup-window-buy-content{
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.popup-window-buy-content-space{
+    height: 29px;
+}
+
+.popup-window-buy-button{
+    padding: 2px 9px 2px 9px;
+    border-radius: 15px;
+    border-style: none;
+}

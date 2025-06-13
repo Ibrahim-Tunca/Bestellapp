@@ -1,0 +1,22 @@
+footer{
+    height: 44px;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.footer-font-style{
+    text-decoration: none;
+    color: rgb(180, 85, 85);
+}
+
+.footer-font-style:hover{
+    filter: brightness(1.2);
+}
+
+
+.footer-order{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
