@@ -5,11 +5,11 @@ function createDishHtml(dish) {
         <div class="main-content">
             <div class="price-seperator">
                 <h3>${dish.name}</h3>
-                <a>${dish.price},-
+                <h3>${dish.price},-
                     <button class="plus-button" onclick='addToBasket(${JSON.stringify(dish)})'>
                         <img class="plus-icon" src="./assets/icons/hinzufuegen.png" alt="plus.png">
                     </button>
-                </a>
+                </h3>
             </div>
             <p>${dish.desctiption}</p>
         </div>`;

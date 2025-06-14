@@ -23,7 +23,7 @@
 
     
 
-    width: 256px;
+    width: 456px;
     height: 100vh;
 
     top: 0px;
@@ -40,6 +40,7 @@
     border-radius: 5px;
     background-color: rgb(139 46 46);
     border-color: rgb(171 70 70);
+    padding-left: 11px;
 }
 
 
@@ -47,6 +48,7 @@
 .shopingcart-content{
     border-bottom: 1px solid white; 
     padding: 10px; 
+    color:rgb(171 70 70);
 }
 
 .order-section{
@@ -56,16 +58,17 @@
 }
 
 .add-remove-button{
-    background-color: rgb(139 46 46);
+    background-color: rgb(171 70 70);
     border-color: rgb(171 70 70);
     border-radius: 15px;
     padding-top: 0;
     padding-bottom: 0px;
     padding-right: 2px;
     padding-left: 2px;
-    height: 17px;
-    font-size: 10px;
-    width: 17px;
+    height: 22px;
+    width: 22px;
+    font-size: 16px;
+    
     border-style: none;
 }
 
@@ -80,20 +83,20 @@
     font-size: bold;
 }
 
-.font-size-shoppingcart{
-    font-size: 12px;
-}
+
 
 .take-out-basket-button{
-    background-color: rgb(139 46 46);
+    background-color: rgb(171 70 70);
     border-color: rgb(171 70 70);
-    height: 14px;
-    font-size: 7px;
+    height: 24px;
+    width: 24px;
+    font-size: 12px;
     padding-bottom: 11px;
     padding-left: 5px;
     padding-right: 5px;
     padding-top: 3px;
     border-style: none;
+    padding-top: 5px;
 }
 
 .display-flex-space-between{
@@ -108,7 +111,6 @@
 .bill-summary{
     font-size: 11px;
     padding-bottom: 6px;
-    position:absolute;
     bottom: 15px;
     width: 100%;
     border-top : 1px solid white;
@@ -127,20 +129,21 @@
     justify-content: space-between;
     padding-left: 6px;
     padding-right: 6px;
+    color: white;
 }
 
 .pay-button{
-    color:white;
+    color:rgb(171 70 70);
     border-radius: 15px;
     border-style: none;
-    
+    font-size: 19px;
 }
 
 .pay-button-container{
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 9px;
+    padding-top: 9px;
 }
 
 .deliverly-service-description{

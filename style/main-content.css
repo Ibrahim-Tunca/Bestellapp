@@ -2,7 +2,8 @@
     color: rgb(180, 85, 85);
     background-color: moccasin;
     padding: 9px 40px;
-    padding-right: 300px;
+    padding-right: 480px;
+    border-top: solid 1px;
 }
 
 .pricelist-section{
@@ -14,6 +15,7 @@
     display:flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
 }
 
 .topic-from-menue{
@@ -30,9 +32,9 @@
 }
 
 .plus-button{
-    padding: 0px 2px;
+    padding: 7px 8px;
     border-style: none;
-    border-radius: 3px;
+    border-radius: 6px;
 }
 
 
