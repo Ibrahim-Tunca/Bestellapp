@@ -79,7 +79,7 @@ function getPopupWindow(){
                                             <div class="popup-window-buy-content">
                                                 <p>Bestellung ist unterwegs!</p>
                                                 <div class="popup-window-buy-content-space"></div>
-                                                <button class="popup-window-buy-button" onclick="location.href='https://www.paypal.com/signin?returnUri=https%3A%2F%2Fwww.paypal.com%2Fmyaccount%2Fsummary&state=%3Fintl%3D0'">ok</button>
+                                                <button class="popup-window-buy-button" onclick="">ok</button>
                                             </div>
                                         </div>
                                     </div>`

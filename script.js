@@ -2,16 +2,12 @@
 function render() {
     let contentRef = document.getElementById("pricelist_id");
     contentRef.innerHTML = ""; 
-
     for (let categoryName in myDishes) {
         contentRef.innerHTML += `<div class="topic-from-menue"><h2>${categoryName.charAt(0).toUpperCase() + categoryName.slice(1)}</h2></div>`; 
-
         let dishesInCategory = myDishes[categoryName]; 
-
-
         for (let i = 0; i < dishesInCategory.length; i++) {
-            let dish = dishesInCategory[i]; // Das aktuelle Gericht
-            contentRef.innerHTML += createDishHtml(dish); // Füge das HTML für jedes Gericht hinzu
+            let dish = dishesInCategory[i];
+            contentRef.innerHTML += createDishHtml(dish);
         }
     }
     renderBasket();
@@ -47,7 +43,7 @@ function renderBasket() {
     if (basketRef.length === 0) {
             contentRef.innerHTML = '<p>Der Warenkorb ist leer.</p>';
             calculateOrderPrice();
-            return; // Funktion beenden, wenn nichts im Warenkorb ist
+            return; 
             }
             basketRef.forEach(dish => {
                 contentRef.innerHTML += createOderHtml(dish);
@@ -63,7 +59,7 @@ function renderBasket() {
     if (foundDish) {
         foundDish.amount++;
         localStorage.setItem('basket', JSON.stringify(basket));
-        renderBasket(); // Warenkorb neu rendern
+        renderBasket();
     }
 }
 
@@ -78,50 +74,43 @@ function decreaseAmount(dishName) {
             basket = basket.filter(item => item.name !== dishName);
         }
         localStorage.setItem('basket', JSON.stringify(basket));
-        renderBasket(); // Warenkorb neu rendern
+        renderBasket();
     }
 }
 
 
 function cancelOrder(dishName) {
     let basket = JSON.parse(localStorage.getItem('basket')) || [];
-
     basket = basket.filter(item => item.name !== dishName);
-
-    localStorage.setItem('basket', JSON.stringify(basket)); // Speichere den neuen Warenkorb
-    renderBasket(); // Aktualisiere die Anzeige des Warenkorbs
+    localStorage.setItem('basket', JSON.stringify(basket));
+    renderBasket();
 }
 
 
 function calculateOrderPrice(){
     let basketRef = JSON.parse(localStorage.getItem('basket')) || [];
-    let contentRef = document.getElementById("bill_id");
+    
     let subTotal = 0;
     basketRef.forEach(dish => {
-
         subTotal += dish.price * dish.amount;
-
     });
-    let deliveryCost = 3.00;
-    const total = subTotal + deliveryCost;
+    addDeliveryCost(subTotal);
+}
 
+
+function addDeliveryCost(subTotal){
+    let basketRef = JSON.parse(localStorage.getItem('basket')) || [];
+    let deliveryCost = 3.00;
+    let contentRef = document.getElementById("bill_id");
+    const total = subTotal + deliveryCost;
     if(total > 15){
         deliveryCost = 0.00;
     };
         if(basketRef.length > 0){
-            contentRef.innerHTML = getOrderPrice(subTotal, deliveryCost, total);
-        
+            contentRef.innerHTML = getOrderPrice(subTotal, deliveryCost, total);    
     } else {
         contentRef.innerHTML = '';
     }
-
-
-}
-
-
-function clearBasket() {
-    localStorage.removeItem('basket'); // Entfernt den 'basket' Eintrag komplett
-    renderBasket();
 }
 
 

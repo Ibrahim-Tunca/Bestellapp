@@ -17,29 +17,9 @@ header{
     padding-left: 11px;
     padding-right: 11px;
 
-    overflow: hidden;
-    position: relative;
 }
 
 .headline{
     display: flex;
     padding: 8px;
-}
-
-.banner-left{
-    height:200px;
-    width: 15px;
-    position: absolute;
-    transform:  rotate(0deg);
-    left: 0px;
-}
-
-
-.banner-right{
-    height:200px;
-    width: 15px;
-    position: absolute;
-    transform:  rotate(-0deg);
-
-    right: 0px;
 }

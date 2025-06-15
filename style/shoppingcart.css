@@ -33,7 +33,7 @@
 
     z-index: 1000;
 
-    transition: all 3200ms ease-in-out;
+    transition: all 750ms ease-in-out;
 }
 
 .shoppingcart-button{
@@ -122,6 +122,7 @@
     padding-left: 6px;
     padding-right: 6px;
     background-color: rgb(190, 219, 138);
+    color: rgb(171 70 70);
 }
 
 .bill-total{
@@ -153,8 +154,8 @@
 
 .popup-window-buy{
     position: absolute;
-    height: 93px;
-    width: 172px;
+    height: 149px;
+    width: 237px;
     border-radius: 8px;
 
     background-color: rgb(139 46 46);
@@ -165,6 +166,7 @@
 }
 
 .popup-window-buy-content{
+    text-align: center;
     padding: 15px;
     display: flex;
     justify-content: center;
@@ -177,7 +179,8 @@
 }
 
 .popup-window-buy-button{
-    padding: 2px 9px 2px 9px;
+    padding: 2px 16px 2px 16px;
     border-radius: 15px;
     border-style: none;
+    font-size: 20px;
 }
